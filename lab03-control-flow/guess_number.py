@@ -6,6 +6,9 @@ def play(target, limit=10):
         while True:
             try:
                 guess = int(input("Guess a number from 1 to 100: "))
+            except EOFError:
+                print("\nGame ended.")
+                return
             except ValueError:
                 print("Enter a whole number.")
                 continue
